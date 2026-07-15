@@ -1,141 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vibusha — Handmade Stationery & Resin Products</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,600;1,9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EDE7DA;
+    --paper-2:#F5F1E7;
+    --ink:#2B2620;
+    --ink-soft:#5C5548;
+    --rust:#A8523A;
+    --sage:#7C8467;
+    --line:#D8CFBC;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    line-height:1.7;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    color:var(--ink);
+  }
+  .wrap{ max-width:960px; margin:0 auto; padding:0 24px; }
+  .eyebrow{
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    font-weight:600;
+  }
 
-  <section id="products" class="wrap">
-    <p class="eyebrow">Stationery</p>
-    <h2>The lineup</h2>
-    <div class="products-grid">
-      <div class="product-card">
-        <div class="swatch s1">Photo coming soon</div>
-        <div class="product-info">
-          <h3>The Everyday Notebook</h3>
-          <p>Hand-stitched, lined pages, made for daily use.</p>
-          <span class="tag">Coming soon</span><br>
-          <a href="#order" class="view-details">Order details</a>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="swatch s2">Photo coming soon</div>
-        <div class="product-info">
-          <h3>The Journal</h3>
-          <p>Thicker cover, blank pages, made to last years.</p>
-          <span class="tag">Coming soon</span><br>
-          <a href="#order" class="view-details">Order details</a>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="swatch s3">Photo coming soon</div>
-        <div class="product-info">
-          <h3>The Gift Set</h3>
-          <p>Notebook, card, and wrap; ready to give.</p>
-          <span class="tag">Coming soon</span><br>
-          <a href="#order" class="view-details">Order details</a>
-        </div>
+  /* stitched divider — brand signature */
+  .stitch{
+    width:100%; height:20px;
+    background-repeat:repeat-x;
+    background-size:22px 20px;
+    background-image:
+      linear-gradient(90deg, transparent 0 6px, var(--line) 6px 14px, transparent 14px 22px);
+    background-position:center;
+    opacity:0.9;
+  }
+
+  header{
+    padding:22px 0 8px;
+  }
+  header .wrap{ display:flex; justify-content:space-between; align-items:center; }
+  .logo{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-weight:700;
+    font-size:24px;
+    letter-spacing:0.01em;
+  }
+  nav a{
+    color:var(--ink-soft);
+    text-decoration:none;
+    font-size:14px;
+    margin-left:24px;
+  }
+  nav a:hover{ color:var(--rust); }
+
+  .hero{
+    padding:90px 0 70px;
+    text-align:center;
+  }
+  .hero h1{
+    font-size:clamp(40px, 7vw, 68px);
+    line-height:1.05;
+    margin-bottom:18px;
+  }
+  .hero p.tagline{
+    font-size:18px;
+    color:var(--ink-soft);
+    max-width:480px;
+    margin:0 auto 28px;
+  }
+  .hero .loc{
+    font-size:13px;
+    color:var(--ink-soft);
+    letter-spacing:0.04em;
+  }
+  .btn{
+    display:inline-block;
+    background:var(--rust);
+    color:var(--paper-2);
+    padding:14px 28px;
+    border-radius:2px;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:0.02em;
+    margin-top:8px;
+  }
+  .btn:hover{ background:#8f4230; }
+  .btn.secondary{
+    background:transparent;
+    color:var(--ink);
+    border:1px solid var(--ink);
+  }
+  .btn.secondary:hover{ border-color:var(--rust); color:var(--rust); }
+
+  section{ padding:64px 0; }
+  section h2{ font-size:30px; margin-bottom:18px; }
+
+  .craft{ max-width:620px; }
+  .craft p{ color:var(--ink-soft); margin-bottom:14px; }
+  .craft ul{ list-style:none; margin-top:20px; }
+  .craft li{
+    padding-left:20px;
+    position:relative;
+    margin-bottom:10px;
+    color:var(--ink-soft);
+    font-size:15px;
+  }
+  .craft li::before{
+    content:"";
+    position:absolute; left:0; top:9px;
+    width:6px; height:6px;
+    background:var(--sage);
+    border-radius:50%;
+  }
+
+  .products-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:20px;
+    margin-top:24px;
+  }
+  .product-card{
+    background:var(--paper-2);
+    border:1px solid var(--line);
+    padding:0;
+    overflow:hidden;
+  }
+  .swatch{
+    height:160px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Fraunces', serif;
+    font-size:14px;
+    color:var(--ink-soft);
+  }
+  .swatch.s1{ background:#DCD3BE; }
+  .swatch.s2{ background:#C9CCB8; }
+  .swatch.s3{ background:#D9BCA9; }
+  .product-info{ padding:18px; }
+  .product-info h3{ font-size:17px; margin-bottom:6px; }
+  .product-info p{ font-size:13px; color:var(--ink-soft); margin-bottom:10px; }
+  .tag{
+    display:inline-block;
+    font-size:11px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--sage);
+    border:1px solid var(--sage);
+    padding:3px 8px;
+  }
+  .view-details{
+    display:inline-block;
+    margin-top:10px;
+    font-size:12px;
+    color:var(--rust);
+    text-decoration:none;
+    font-weight:600;
+    letter-spacing:0.02em;
+  }
+  .view-details:hover{ text-decoration:underline; }
+  .product-card{ cursor:pointer; transition:box-shadow 0.2s ease; }
+  .product-card:hover{ box-shadow:0 4px 16px rgba(43,38,32,0.08); }
+
+  .steps{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:28px;
+    margin-top:28px;
+  }
+  .step .num{
+    font-family:'Fraunces', serif;
+    font-size:15px;
+    color:var(--rust);
+    margin-bottom:8px;
+  }
+  .step h3{ font-size:16px; margin-bottom:6px; }
+  .step p{ font-size:14px; color:var(--ink-soft); }
+
+  details{
+    border-top:1px solid var(--line);
+    padding:16px 0;
+  }
+  details:last-child{ border-bottom:1px solid var(--line); }
+  summary{
+    cursor:pointer;
+    font-family:'Fraunces', serif;
+    font-size:16px;
+    list-style:none;
+  }
+  summary::-webkit-details-marker{ display:none; }
+  summary::after{
+    content:"+";
+    float:right;
+    color:var(--rust);
+  }
+  details[open] summary::after{ content:"–"; }
+  details p{
+    margin-top:10px;
+    color:var(--ink-soft);
+    font-size:14px;
+    max-width:600px;
+  }
+
+  footer{
+    padding:50px 0 40px;
+    text-align:center;
+  }
+  footer .logo{ justify-content:center; display:flex; margin-bottom:14px; }
+  .footer-links{ margin-bottom:18px; }
+  .footer-links a{
+    color:var(--ink-soft);
+    text-decoration:none;
+    font-size:13px;
+    margin:0 10px;
+  }
+  .footer-links a:hover{ color:var(--rust); }
+  .fine{ font-size:12px; color:var(--ink-soft); opacity:0.8; }
+
+  @media (max-width:720px){
+    .products-grid, .steps{ grid-template-columns:1fr; }
+    .craft{ grid-template-columns:1fr !important; }
+    nav{ display:none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="logo">Vibusha</div>
+    <nav>
+      <a href="#story">The Story</a>
+      <a href="#products">Stationery</a>
+      <a href="#resin">Resin</a>
+      <a href="#order">How to order</a>
+      <a href="#faq">FAQS</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Handmade stationery</p>
+    <h1>Made by hand,<br>page by page, layer by layer</h1>
+    <p class="tagline">Small-batch stationery and Resin items, hand-bound in India and delivered to you in Dubai.</p>
+    <p class="loc">Dubai, UAE</p>
+    <div style="margin-top:24px;">
+      <a href="#order" class="btn">How to order</a>
+    </div>
+  </div>
+</section>
+
+<div class="stitch"></div>
+
+<section id="craft" class="wrap">
+  <p class="eyebrow">The Story</p>
+  <h2>Nothing here comes off a factory line</h2>
+  <div class="craft" style="display:grid; grid-template-columns:1fr 1fr; gap:40px; max-width:100%;">
+    <div>
+      <h3 style="font-size:18px; margin-bottom:10px;">Notebooks & Stationery</h3>
+      <p>Every notebook starts as raw paper and thread, cut, folded, and stitched by hand in small batches. No two runs are exactly alike — that's the point.</p>
+      <ul>
+        <li>Materials sourced and crafted in India</li>
+        <li>Hand-stitched binding, not machine-stapled</li>
+        <li>Small batches — once a run sells out, it's gone</li>
+        <li>[Add another point here]</li>
+      </ul>
+    </div>
+    <div>
+      <h3 style="font-size:18px; margin-bottom:10px;">Resin Pieces</h3>
+      <p>Each resin piece is hand-poured, layered, and cured in small batches — a slow process that can't be rushed.</p>
+      <ul>
+        <li>Hand-poured and cured, layer by layer</li>
+        <li>Small-batch, limited runs</li>
+        <li>[Add another point here]</li>
+        <li>[Add another point here]</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="stitch"></div>
+
+<section id="products" class="wrap">
+  <p class="eyebrow">Stationery</p>
+  <h2>The lineup</h2>
+  <div class="products-grid">
+    <!-- To add a photo: replace the swatch div below with <img src="yourfile.jpg" style="width:100%; height:160px; object-fit:cover;"> -->
+    <div class="product-card">
+      <div class="swatch s1">Photo coming soon</div>
+      <div class="product-info">
+        <h3>The Everyday Notebook</h3>
+        <p>Hand-stitched, lined pages, made for daily use.</p>
+        <span class="tag">Coming soon</span><br>
+        <a href="#" class="view-details">View details →</a>
+        <!-- Add full description, price, and sizes here once ready -->
       </div>
     </div>
-  </section>
-
-  <div class="stitch"></div>
-
-  <section id="resin" class="wrap">
-    <p class="eyebrow">Resin</p>
-    <h2>Handcast, one piece at a time</h2>
-    <p style="color:var(--ink-soft); max-width:590px; margin-bottom:24px; font-size:15px;">Each resin piece is hand-poured and cured in small batches, so no two pieces are exactly identical.</p>
-    <div class="products-grid">
-      <div class="product-card">
-        <div class="swatch s3">Photo coming soon</div>
-        <div class="product-info">
-          <h3>Accessories</h3>
-          <p>Earrings, keychains, and small wearable pieces.</p>
-          <span class="tag">Coming soon</span><br>
-          <a href="#order" class="view-details">Order details</a>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="swatch s2">Photo coming soon</div>
-        <div class="product-info">
-          <h3>Home Decor</h3>
-          <p>Coasters, trays, and paperweights for everyday use.</p>
-          <span class="tag">Coming soon</span><br>
-          <a href="#order" class="view-details">Order details</a>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="swatch s1">Photo coming soon</div>
-        <div class="product-info">
-          <h3>Desk Companions</h3>
-          <p>Bookmarks and pen holders, made to pair with the notebooks.</p>
-          <span class="tag">Coming soon</span><br>
-          <a href="#order" class="view-details">Order details</a>
-        </div>
+    <div class="product-card">
+      <div class="swatch s2">Photo coming soon</div>
+      <div class="product-info">
+        <h3>The Journal</h3>
+        <p>Thicker cover, blank pages, made to last years.</p>
+        <span class="tag">Coming soon</span><br>
+        <a href="#" class="view-details">View details →</a>
+        <!-- Add full description, price, and sizes here once ready -->
       </div>
     </div>
-  </section>
-
-  <div class="stitch"></div>
-
-  <section id="order" class="wrap">
-    <p class="eyebrow">How to order</p>
-    <h2>Three steps, that's it</h2>
-    <div class="steps">
-      <div class="step">
-        <div class="num">01</div>
-        <h3>Message us</h3>
-        <p>DM on Instagram or send a WhatsApp message with what you'd like.</p>
-      </div>
-      <div class="step">
-        <div class="num">02</div>
-        <h3>Confirm your pick</h3>
-        <p>We'll confirm the product, price, and delivery details with you.</p>
-      </div>
-      <div class="step">
-        <div class="num">03</div>
-        <h3>We deliver</h3>
-        <p>Your order is packed by hand and delivered across Dubai.</p>
+    <div class="product-card">
+      <div class="swatch s3">Photo coming soon</div>
+      <div class="product-info">
+        <h3>The Gift Set</h3>
+        <p>Notebook, card, and wrap — ready to give.</p>
+        <span class="tag">Coming soon</span><br>
+        <a href="#" class="view-details">View details →</a>
+        <!-- Add full description, price, and sizes here once ready -->
       </div>
     </div>
-    <div style="margin-top:32px; display:flex; gap:14px; flex-wrap:wrap;">
-      <a href="https://wa.me/971521539791" class="btn">Order on WhatsApp</a>
-      <a href="#" class="btn secondary">Instagram coming soon</a>
+  </div>
+</section>
+
+<div class="stitch"></div>
+
+<section id="resin" class="wrap">
+  <p class="eyebrow">Resin</p>
+  <h2>Handcast, one piece at a time</h2>
+  <p style="color:var(--ink-soft); max-width:560px; margin-bottom:24px; font-size:15px;">Each resin piece is hand-poured and cured in small batches — no two pieces are exactly identical.</p>
+  <div class="products-grid">
+    <!-- To add a photo: replace the swatch div below with <img src="yourfile.jpg" style="width:100%; height:160px; object-fit:cover;"> -->
+    <div class="product-card">
+      <div class="swatch s3">Photo coming soon</div>
+      <div class="product-info">
+        <h3>Accessories</h3>
+        <p>Earrings, keychains, and small wearable pieces.</p>
+        <span class="tag">Coming soon</span><br>
+        <a href="#" class="view-details">View details →</a>
+        <!-- Add full description, price, and sizes here once ready -->
+      </div>
     </div>
-  </section>
+    <div class="product-card">
+      <div class="swatch s2">Photo coming soon</div>
+      <div class="product-info">
+        <h3>Home decor</h3>
+        <p>Coasters, trays, and paperweights for everyday use.</p>
+        <span class="tag">Coming soon</span><br>
+        <a href="#" class="view-details">View details →</a>
+        <!-- Add full description, price, and sizes here once ready -->
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="swatch s1">Photo coming soon</div>
+      <div class="product-info">
+        <h3>Desk companions</h3>
+        <p>Bookmarks and pen holders, made to pair with the notebooks.</p>
+        <span class="tag">Coming soon</span><br>
+        <a href="#" class="view-details">View details →</a>
+        <!-- Add full description, price, and sizes here once ready -->
+      </div>
+    </div>
+  </div>
+</section>
 
-  <div class="stitch"></div>
+<div class="stitch"></div>
 
-  <section id="faq" class="wrap">
-    <p class="eyebrow">FAQ</p>
-    <h2>Good to know</h2>
+<section id="order" class="wrap">
+  <p class="eyebrow">How to order</p>
+  <h2>Three steps, that's it</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="num">01</div>
+      <h3>Message us</h3>
+      <p>DM on Instagram or send a WhatsApp message with what you'd like.</p>
+    </div>
+    <div class="step">
+      <div class="num">02</div>
+      <h3>Confirm your pick</h3>
+      <p>We'll confirm the product, price, and delivery details with you.</p>
+    </div>
+    <div class="step">
+      <div class="num">03</div>
+      <h3>We deliver</h3>
+      <p>Your order is packed by hand and delivered across Dubai.</p>
+    </div>
+  </div>
+  <div style="margin-top:32px; display:flex; gap:14px; flex-wrap:wrap;">
+    <a href="https://wa.me/971521539791" class="btn">Order on WhatsApp</a>
+    <a href="#" class="btn secondary">Instagram — coming soon</a>
+  </div>
+</section>
 
-    <details open>
-      <summary>How long does delivery take?</summary>
-      <p>Once your order is confirmed, local Dubai delivery typically takes 2-4 days depending on stock availability. Express delivery is also available in Dubai.</p>
-    </details>
-    <details>
-      <summary>Can I customize a notebook?</summary>
-      <p>Yes. Message us with what you have in mind and we'll let you know what's possible for your batch.</p>
-    </details>
-    <details>
-      <summary>Do you take bulk or corporate orders?</summary>
-      <p>Yes, reach out via WhatsApp with your quantity and timeline and we'll work out a plan.</p>
-    </details>
-    <details>
-      <summary>What payment methods do you accept?</summary>
-      <p>Details are shared once your order is confirmed. Cash on delivery, card payments, and bank transfer are supported.</p>
-    </details>
-  </section>
-</main>
+<div class="stitch"></div>
+
+<section id="faq" class="wrap">
+  <p class="eyebrow">FAQ</p>
+  <h2>Good to know</h2>
+
+  <details open>
+    <summary>How long does delivery take?</summary>
+    <p>Once your order is confirmed, local Dubai delivery typically takes 2-4 days depending on stock availability.
+    We also provide express delivery in Dubai</p>
+  </details>
+  <details>
+    <summary>Can I customize a notebook?</summary>
+    <p>Yes — message us with what you have in mind and we'll let you know what's possible for your batch.</p>
+  </details>
+  <details>
+    <summary>Do you take bulk or corporate orders?</summary>
+    <p>Yes, reach out via WhatsApp with your quantity and timeline and we'll work out a plan.</p>
+  </details>
+  <details>
+    <summary>What payment methods do you accept?</summary>
+    <p>Details are shared once your order is confirmed — cash on delivery , Card Payments and bank transfer are both supported.</p>
+  </details>
+</section>
 
 <div class="stitch"></div>
 
 <footer>
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="Vibusha home">
-      <img class="brand-mark" src="assets/vibusha-logo.png" alt="Vibusha logo">
-      <div>
-        <div class="brand-name">Vibusha</div>
-        <div class="brand-subtitle">Handmade stationery & resin</div>
-      </div>
-    </a>
+    <div class="logo">Vibusha</div>
     <div class="footer-links">
-      <a href="#">Instagram coming soon</a>
+      <a href="#">Instagram — coming soon</a>
       <a href="https://wa.me/971521539791">WhatsApp</a>
       <a href="mailto:amirullah.finance@gmail.com">Email</a>
     </div>
