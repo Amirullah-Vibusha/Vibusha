@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vibusha — Handmade Stationery & Resin Products</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,600;1,9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
     --paper:#EDE7DA;
@@ -52,7 +52,13 @@
     padding:22px 0 8px;
   }
   header .wrap{ display:flex; justify-content:space-between; align-items:center; }
-  .logo{ font-family:'Fraunces', serif; font-size:20px; letter-spacing:0.01em; }
+  .logo{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-weight:700;
+    font-size:24px;
+    letter-spacing:0.01em;
+  }
   nav a{
     color:var(--ink-soft);
     text-decoration:none;
@@ -158,6 +164,18 @@
     border:1px solid var(--sage);
     padding:3px 8px;
   }
+  .view-details{
+    display:inline-block;
+    margin-top:10px;
+    font-size:12px;
+    color:var(--rust);
+    text-decoration:none;
+    font-weight:600;
+    letter-spacing:0.02em;
+  }
+  .view-details:hover{ text-decoration:underline; }
+  .product-card{ cursor:pointer; transition:box-shadow 0.2s ease; }
+  .product-card:hover{ box-shadow:0 4px 16px rgba(43,38,32,0.08); }
 
   .steps{
     display:grid;
@@ -216,6 +234,7 @@
 
   @media (max-width:720px){
     .products-grid, .steps{ grid-template-columns:1fr; }
+    .craft{ grid-template-columns:1fr !important; }
     nav{ display:none; }
   }
 </style>
@@ -238,7 +257,7 @@
 <section class="hero">
   <div class="wrap">
     <p class="eyebrow">Handmade stationery</p>
-    <h1>Made by hand,<br>notebook by notebook and layer by layer</h1>
+    <h1>Made by hand,<br>page by page, layer by layer</h1>
     <p class="tagline">Small-batch stationery and Resin items, hand-bound in India and delivered to you in Dubai.</p>
     <p class="loc">Dubai, UAE</p>
     <div style="margin-top:24px;">
@@ -252,14 +271,27 @@
 <section id="craft" class="wrap">
   <p class="eyebrow">The Story</p>
   <h2>Nothing here comes off a factory line</h2>
-  <div class="craft">
-    <p>Every notebook starts as raw paper and thread, cut, folded, and stitched by hand in small batches. No two runs are exactly alike — that's the point.</p>
-    <ul>
-      <li>Materials sourced and crafted in India</li>
-      <li>Hand-stitched binding, not machine-stapled</li>
-      <li>Small batches — once a run sells out, it's gone</li>
-      <li>Delivered locally across Dubai</li>
-    </ul>
+  <div class="craft" style="display:grid; grid-template-columns:1fr 1fr; gap:40px; max-width:100%;">
+    <div>
+      <h3 style="font-size:18px; margin-bottom:10px;">Notebooks & Stationery</h3>
+      <p>Every notebook starts as raw paper and thread, cut, folded, and stitched by hand in small batches. No two runs are exactly alike — that's the point.</p>
+      <ul>
+        <li>Materials sourced and crafted in India</li>
+        <li>Hand-stitched binding, not machine-stapled</li>
+        <li>Small batches — once a run sells out, it's gone</li>
+        <li>[Add another point here]</li>
+      </ul>
+    </div>
+    <div>
+      <h3 style="font-size:18px; margin-bottom:10px;">Resin Pieces</h3>
+      <p>Each resin piece is hand-poured, layered, and cured in small batches — a slow process that can't be rushed.</p>
+      <ul>
+        <li>Hand-poured and cured, layer by layer</li>
+        <li>Small-batch, limited runs</li>
+        <li>[Add another point here]</li>
+        <li>[Add another point here]</li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -269,12 +301,15 @@
   <p class="eyebrow">Stationery</p>
   <h2>The lineup</h2>
   <div class="products-grid">
+    <!-- To add a photo: replace the swatch div below with <img src="yourfile.jpg" style="width:100%; height:160px; object-fit:cover;"> -->
     <div class="product-card">
       <div class="swatch s1">Photo coming soon</div>
       <div class="product-info">
         <h3>The Everyday Notebook</h3>
         <p>Hand-stitched, lined pages, made for daily use.</p>
-        <span class="tag">Coming soon</span>
+        <span class="tag">Coming soon</span><br>
+        <a href="#" class="view-details">View details →</a>
+        <!-- Add full description, price, and sizes here once ready -->
       </div>
     </div>
     <div class="product-card">
@@ -282,7 +317,9 @@
       <div class="product-info">
         <h3>The Journal</h3>
         <p>Thicker cover, blank pages, made to last years.</p>
-        <span class="tag">Coming soon</span>
+        <span class="tag">Coming soon</span><br>
+        <a href="#" class="view-details">View details →</a>
+        <!-- Add full description, price, and sizes here once ready -->
       </div>
     </div>
     <div class="product-card">
@@ -290,7 +327,9 @@
       <div class="product-info">
         <h3>The Gift Set</h3>
         <p>Notebook, card, and wrap — ready to give.</p>
-        <span class="tag">Coming soon</span>
+        <span class="tag">Coming soon</span><br>
+        <a href="#" class="view-details">View details →</a>
+        <!-- Add full description, price, and sizes here once ready -->
       </div>
     </div>
   </div>
@@ -303,12 +342,15 @@
   <h2>Handcast, one piece at a time</h2>
   <p style="color:var(--ink-soft); max-width:560px; margin-bottom:24px; font-size:15px;">Each resin piece is hand-poured and cured in small batches — no two pieces are exactly identical.</p>
   <div class="products-grid">
+    <!-- To add a photo: replace the swatch div below with <img src="yourfile.jpg" style="width:100%; height:160px; object-fit:cover;"> -->
     <div class="product-card">
       <div class="swatch s3">Photo coming soon</div>
       <div class="product-info">
         <h3>Accessories</h3>
         <p>Earrings, keychains, and small wearable pieces.</p>
-        <span class="tag">Coming soon</span>
+        <span class="tag">Coming soon</span><br>
+        <a href="#" class="view-details">View details →</a>
+        <!-- Add full description, price, and sizes here once ready -->
       </div>
     </div>
     <div class="product-card">
@@ -316,7 +358,9 @@
       <div class="product-info">
         <h3>Home decor</h3>
         <p>Coasters, trays, and paperweights for everyday use.</p>
-        <span class="tag">Coming soon</span>
+        <span class="tag">Coming soon</span><br>
+        <a href="#" class="view-details">View details →</a>
+        <!-- Add full description, price, and sizes here once ready -->
       </div>
     </div>
     <div class="product-card">
@@ -324,7 +368,9 @@
       <div class="product-info">
         <h3>Desk companions</h3>
         <p>Bookmarks and pen holders, made to pair with the notebooks.</p>
-        <span class="tag">Coming soon</span>
+        <span class="tag">Coming soon</span><br>
+        <a href="#" class="view-details">View details →</a>
+        <!-- Add full description, price, and sizes here once ready -->
       </div>
     </div>
   </div>
@@ -393,7 +439,7 @@
       <a href="https://wa.me/971521539791">WhatsApp</a>
       <a href="mailto:amirullah.finance@gmail.com">Email</a>
     </div>
-    <p class="fine">Handmade in India · Delivered in Dubai, UAE</p>
+    <p class="fine">Crafted with care in India · Delivered with love across the UAE</p>
   </div>
 </footer>
 
