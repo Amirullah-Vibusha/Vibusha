@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vibusha — Handmade Stationery & Resin Products</title>
+<title>Vibusha — Handmade Stationery & Resin, Crafted by Artisans</title>
 <link rel="icon" type="image/png" href="vibusha-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,600;1,9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Caveat:wght@600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,600;1,9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
     --paper:#FBF5E9;
@@ -37,8 +37,6 @@
     color:var(--ink-soft);
     font-weight:600;
   }
-
-  /* stitched divider — brand signature */
   .stitch{
     width:100%; height:20px;
     background-repeat:repeat-x;
@@ -48,10 +46,7 @@
     background-position:center;
     opacity:0.9;
   }
-
-  header{
-    padding:22px 0 8px;
-  }
+  header{ padding:22px 0 8px; }
   header .wrap{ display:flex; justify-content:space-between; align-items:center; }
   .logo{
     font-family:'Permanent Marker', cursive;
@@ -67,20 +62,16 @@
     margin-left:24px;
   }
   nav a:hover{ color:var(--rust); }
-
-  .hero{
-    padding:90px 0 70px;
-    text-align:center;
-  }
+  .hero{ padding:90px 0 70px; text-align:center; }
   .hero h1{
-    font-size:clamp(40px, 7vw, 68px);
-    line-height:1.05;
+    font-size:clamp(40px, 7vw, 66px);
+    line-height:1.08;
     margin-bottom:18px;
   }
   .hero p.tagline{
     font-size:18px;
     color:var(--ink-soft);
-    max-width:480px;
+    max-width:560px;
     margin:0 auto 28px;
   }
   .hero .loc{
@@ -107,28 +98,41 @@
     border:1px solid var(--ink);
   }
   .btn.secondary:hover{ border-color:var(--rust); color:var(--rust); }
-
   section{ padding:64px 0; }
   section h2{ font-size:30px; margin-bottom:18px; }
-
+  .pull-quote{
+    font-family:'Caveat', cursive;
+    font-weight:700;
+    font-size:32px;
+    color:var(--rust);
+    line-height:1.3;
+    max-width:640px;
+    margin:22px 0 30px;
+  }
   .craft{ max-width:620px; }
   .craft p{ color:var(--ink-soft); margin-bottom:14px; }
-  .craft ul{ list-style:none; margin-top:20px; }
-  .craft li{
+  .plainlist{ list-style:none; margin-top:0; }
+  .plainlist li{
     padding-left:20px;
     position:relative;
     margin-bottom:10px;
     color:var(--ink-soft);
     font-size:15px;
   }
-  .craft li::before{
+  .plainlist li::before{
     content:"";
     position:absolute; left:0; top:9px;
     width:6px; height:6px;
     background:var(--sage);
     border-radius:50%;
   }
-
+  .two-col{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    max-width:100%;
+  }
+  .two-col h3{ font-size:18px; margin-bottom:10px; }
   .products-grid{
     display:grid;
     grid-template-columns:repeat(3, 1fr);
@@ -140,19 +144,26 @@
     border:1px solid var(--line);
     padding:0;
     overflow:hidden;
+    cursor:pointer;
+    transition:box-shadow 0.2s ease;
   }
+  .product-card:hover{ box-shadow:0 4px 16px rgba(43,38,32,0.08); }
   .swatch{
-    height:160px;
+    height:150px;
     display:flex;
     align-items:center;
     justify-content:center;
     font-family:'Fraunces', serif;
     font-size:14px;
     color:var(--ink-soft);
+    text-align:center;
+    padding:0 12px;
   }
   .swatch.s1{ background:#F2DAAF; }
   .swatch.s2{ background:#EEBC4D; }
   .swatch.s3{ background:#E3A87C; }
+  .swatch.s4{ background:#D9B383; }
+  .swatch.s5{ background:#ECC98A; }
   .product-info{ padding:18px; }
   .product-info h3{ font-size:17px; margin-bottom:6px; }
   .product-info p{ font-size:13px; color:var(--ink-soft); margin-bottom:10px; }
@@ -175,9 +186,34 @@
     letter-spacing:0.02em;
   }
   .view-details:hover{ text-decoration:underline; }
-  .product-card{ cursor:pointer; transition:box-shadow 0.2s ease; }
-  .product-card:hover{ box-shadow:0 4px 16px rgba(43,38,32,0.08); }
-
+  .mission-list{
+    list-style:none;
+    margin-top:18px;
+    max-width:640px;
+  }
+  .mission-list li{
+    padding-left:24px;
+    position:relative;
+    margin-bottom:12px;
+    color:var(--ink-soft);
+    font-size:15px;
+  }
+  .mission-list li::before{
+    content:"✦";
+    position:absolute; left:0; top:0;
+    color:var(--rust);
+    font-size:13px;
+  }
+  .note-box{
+    background:var(--paper-2);
+    border:1px solid var(--line);
+    border-left:3px solid var(--rust);
+    padding:16px 20px;
+    margin-top:24px;
+    font-size:14px;
+    color:var(--ink-soft);
+    max-width:640px;
+  }
   .steps{
     display:grid;
     grid-template-columns:repeat(3, 1fr);
@@ -192,11 +228,7 @@
   }
   .step h3{ font-size:16px; margin-bottom:6px; }
   .step p{ font-size:14px; color:var(--ink-soft); }
-
-  details{
-    border-top:1px solid var(--line);
-    padding:16px 0;
-  }
+  details{ border-top:1px solid var(--line); padding:16px 0; }
   details:last-child{ border-bottom:1px solid var(--line); }
   summary{
     cursor:pointer;
@@ -205,11 +237,7 @@
     list-style:none;
   }
   summary::-webkit-details-marker{ display:none; }
-  summary::after{
-    content:"+";
-    float:right;
-    color:var(--rust);
-  }
+  summary::after{ content:"+"; float:right; color:var(--rust); }
   details[open] summary::after{ content:"–"; }
   details p{
     margin-top:10px;
@@ -217,11 +245,7 @@
     font-size:14px;
     max-width:600px;
   }
-
-  footer{
-    padding:50px 0 40px;
-    text-align:center;
-  }
+  footer{ padding:50px 0 40px; text-align:center; }
   footer .logo{ justify-content:center; display:flex; margin-bottom:14px; }
   .footer-links{ margin-bottom:18px; }
   .footer-links a{
@@ -232,10 +256,8 @@
   }
   .footer-links a:hover{ color:var(--rust); }
   .fine{ font-size:12px; color:var(--ink-soft); opacity:0.8; }
-
   @media (max-width:720px){
-    .products-grid, .steps{ grid-template-columns:1fr; }
-    .craft{ grid-template-columns:1fr !important; }
+    .products-grid, .steps, .two-col{ grid-template-columns:1fr; }
     nav{ display:none; }
   }
 </style>
@@ -246,51 +268,72 @@
   <div class="wrap">
     <div class="logo">Vibusha</div>
     <nav>
-      <a href="#story">The Story</a>
+      <a href="#mission">Our Mission</a>
+      <a href="#story">The Craft</a>
       <a href="#products">Stationery</a>
       <a href="#resin">Resin</a>
       <a href="#order">How to order</a>
-      <a href="#faq">FAQS</a>
+      <a href="#faq">FAQs</a>
     </nav>
   </div>
 </header>
 
 <section class="hero">
   <div class="wrap">
-    <p class="eyebrow">Handmade stationery</p>
-    <h1>Made by hand,<br>page by page, layer by layer</h1>
-    <p class="tagline">Artisan notebooks and resin goods, handcrafted with love.</p>
+    <p class="eyebrow">Handmade heritage, reimagined</p>
+    <h1>Made by hand,<br>carried by culture</h1>
+    <p class="tagline">Artisan stationery and resin keepsakes, handcrafted by tribal artists across India — each piece one of a kind, never mass-produced.</p>
     <p class="loc">Dubai, UAE</p>
-    <div style="margin-top:24px;">
-      <a href="#order" class="btn">How to order</a>
+    <div style="margin-top:24px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+      <a href="#products" class="btn">Shop the collection</a>
+      <a href="#mission" class="btn secondary">Our mission</a>
     </div>
   </div>
 </section>
 
 <div class="stitch"></div>
 
-<section id="craft" class="wrap">
-  <p class="eyebrow">The Story</p>
+<!-- MISSION SECTION — sourced from the Vibusha brand PDF. Edit freely as the story evolves. -->
+<section id="mission" class="wrap">
+  <p class="eyebrow">Our Mission</p>
+  <h2>A platform for artists the world overlooks</h2>
+  <p class="pull-quote">"Each brush stroke carries a story that deserves to be seen."</p>
+  <div class="craft">
+    <p>At Vibusha, we give a stand to artists who truly deserve appreciation but face constraints in reaching the world. We work closely with tribes across India — and beyond — whose art and heritage are endangered or on the verge of being forgotten, giving them a platform to showcase their culture in whatever form speaks to them.</p>
+    <p>We don't burden our artisans with quantity. Each artist decides how much they create and at what pace — no mass production, no two pieces identical. Every order carries a fixed share back to the artisan behind it, supporting and uplifting their craft directly.</p>
+  </div>
+  <ul class="mission-list">
+    <li>Supporting artisans from endangered and lesser-known tribes, in India and around the world</li>
+    <li>No mass production — every artist sets their own pace and quantity</li>
+    <li>A fixed portion of every order goes directly back to the artisan</li>
+    <li>Every piece is one of a kind, shaped by the artist's own hands and thoughts</li>
+  </ul>
+</section>
+
+<div class="stitch"></div>
+
+<section id="story" class="wrap">
+  <p class="eyebrow">The Craft</p>
   <h2>Crafted by hand, loved by you</h2>
-  <div class="craft" style="display:grid; grid-template-columns:1fr 1fr; gap:40px; max-width:100%;">
+  <div class="two-col">
     <div>
-      <h3 style="font-size:18px; margin-bottom:10px;">Notebooks & Stationery</h3>
-      <p>Every notebook starts as raw paper and thread, cut, folded, and stitched by hand in small batches. No two runs are exactly alike — that's the point.</p>
-      <ul>
-        <li>Materials sourced and crafted in India</li>
-        <li>Hand-stitched binding, not machine-stapled</li>
-        <li>Small batches — once a run sells out, it's gone</li>
-        <li>[Add another point here]</li>
+      <h3>Stationery</h3>
+      <p>Every notebook is hand-painted, hand-stitched, and shaped around how you actually think — lined for the focused, unlined for the free-flowing, dated or undated, entirely your call.</p>
+      <ul class="plainlist">
+        <li>Pages blended from cotton, silk, and moss</li>
+        <li>Hand-painted covers — no two alike</li>
+        <li>Customized to how you write, sketch, and think</li>
+        <li>A portion of every order supports the artisan behind it</li>
       </ul>
     </div>
     <div>
-      <h3 style="font-size:18px; margin-bottom:10px;">Resin Pieces</h3>
-      <p>Each resin piece is hand-poured, layered, and cured in small batches — a slow process that can't be rushed.</p>
-      <ul>
+      <h3>Resin</h3>
+      <p>Built to preserve — a pressed flower, a pet's paw print, a memory you don't want to fade. Each piece is hand-poured and cured slowly, layer by layer.</p>
+      <ul class="plainlist">
         <li>Hand-poured and cured, layer by layer</li>
-        <li>Small-batch, limited runs</li>
-        <li>[Add another point here]</li>
-        <li>[Add another point here]</li>
+        <li>Preserves keepsakes, fur, paw prints, or memories that matter</li>
+        <li>Every piece supports our stray animal care initiative</li>
+        <li>No two pours are ever identical</li>
       </ul>
     </div>
   </div>
@@ -302,35 +345,55 @@
   <p class="eyebrow">Stationery</p>
   <h2>The lineup</h2>
   <div class="products-grid">
-    <!-- To add a photo: replace the swatch div below with <img src="yourfile.jpg" style="width:100%; height:160px; object-fit:cover;"> -->
+    <!-- To add a photo: replace the swatch div below with <img src="yourfile.jpg" style="width:100%; height:150px; object-fit:cover;"> -->
     <div class="product-card">
       <div class="swatch s1">Photo coming soon</div>
       <div class="product-info">
-        <h3>The Everyday Notebook</h3>
-        <p>Hand-stitched, lined pages, made for daily use.</p>
+        <h3>The Daily Journal</h3>
+        <p>Hand-painted, hand-stitched, with pages blended from cotton, silk, and moss. Lined, unlined, dated, or free-flowing — your call.</p>
         <span class="tag">Coming soon</span><br>
         <a href="#" class="view-details">View details →</a>
-        <!-- Add full description, price, and sizes here once ready -->
+        <!-- Add full description, price, and customization options here once ready -->
       </div>
     </div>
     <div class="product-card">
       <div class="swatch s2">Photo coming soon</div>
       <div class="product-info">
-        <h3>The Journal</h3>
-        <p>Thicker cover, blank pages, made to last years.</p>
+        <h3>The Everyday Handbook</h3>
+        <p>For catching stray thoughts before they slip away — morning coffee ideas, midday eureka moments, your next big project.</p>
         <span class="tag">Coming soon</span><br>
         <a href="#" class="view-details">View details →</a>
-        <!-- Add full description, price, and sizes here once ready -->
+        <!-- Add full description, price, and customization options here once ready -->
       </div>
     </div>
     <div class="product-card">
       <div class="swatch s3">Photo coming soon</div>
       <div class="product-info">
-        <h3>The Gift Set</h3>
-        <p>Notebook, card, and wrap — ready to give.</p>
+        <h3>The Bookmark</h3>
+        <p>Handmade from wood, handmade paper, and resin — marking your place and your progress.</p>
         <span class="tag">Coming soon</span><br>
         <a href="#" class="view-details">View details →</a>
-        <!-- Add full description, price, and sizes here once ready -->
+        <!-- Add full description, price, and customization options here once ready -->
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="swatch s4">Photo coming soon</div>
+      <div class="product-info">
+        <h3>Wooden Pens & Pencils</h3>
+        <p>Inscribed wooden pens made to order, paired with a complimentary pencil for the thoughts you're still shaping.</p>
+        <span class="tag">Coming soon</span><br>
+        <a href="#" class="view-details">View details →</a>
+        <!-- Add full description, price, and customization options here once ready -->
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="swatch s5">Photo coming soon</div>
+      <div class="product-info">
+        <h3>Pen Stands & Carrying Cases</h3>
+        <p>A home for your writing tools, as considered as the pens themselves.</p>
+        <span class="tag">Coming soon</span><br>
+        <a href="#" class="view-details">View details →</a>
+        <!-- Add full description, price, and customization options here once ready -->
       </div>
     </div>
   </div>
@@ -340,15 +403,15 @@
 
 <section id="resin" class="wrap">
   <p class="eyebrow">Resin</p>
-  <h2>Handcast, one piece at a time</h2>
-  <p style="color:var(--ink-soft); max-width:560px; margin-bottom:24px; font-size:15px;">Each resin piece is hand-poured and cured in small batches — no two pieces are exactly identical.</p>
+  <h2>Built to preserve, made to last</h2>
+  <p style="color:var(--ink-soft); max-width:600px; margin-bottom:24px; font-size:15px;">Preserving isn't just about the object — it's what brings families and feelings closer, turning a keepsake into something passed down.</p>
   <div class="products-grid">
-    <!-- To add a photo: replace the swatch div below with <img src="yourfile.jpg" style="width:100%; height:160px; object-fit:cover;"> -->
+    <!-- To add a photo: replace the swatch div below with <img src="yourfile.jpg" style="width:100%; height:150px; object-fit:cover;"> -->
     <div class="product-card">
       <div class="swatch s3">Photo coming soon</div>
       <div class="product-info">
-        <h3>Accessories</h3>
-        <p>Earrings, keychains, and small wearable pieces.</p>
+        <h3>Trays</h3>
+        <p>For everyday objects that deserve a proper place to land.</p>
         <span class="tag">Coming soon</span><br>
         <a href="#" class="view-details">View details →</a>
         <!-- Add full description, price, and sizes here once ready -->
@@ -357,8 +420,8 @@
     <div class="product-card">
       <div class="swatch s2">Photo coming soon</div>
       <div class="product-info">
-        <h3>Home decor</h3>
-        <p>Coasters, trays, and paperweights for everyday use.</p>
+        <h3>Coasters</h3>
+        <p>Small enough for every mug, sturdy enough to last for years.</p>
         <span class="tag">Coming soon</span><br>
         <a href="#" class="view-details">View details →</a>
         <!-- Add full description, price, and sizes here once ready -->
@@ -367,13 +430,26 @@
     <div class="product-card">
       <div class="swatch s1">Photo coming soon</div>
       <div class="product-info">
-        <h3>Desk companions</h3>
-        <p>Bookmarks and pen holders, made to pair with the notebooks.</p>
+        <h3>Photo Frames</h3>
+        <p>Preserve a moment exactly as you remember it.</p>
         <span class="tag">Coming soon</span><br>
         <a href="#" class="view-details">View details →</a>
         <!-- Add full description, price, and sizes here once ready -->
       </div>
     </div>
+    <div class="product-card">
+      <div class="swatch s4">Photo coming soon</div>
+      <div class="product-info">
+        <h3>Pen Stands</h3>
+        <p>A companion to your pens, cast to last.</p>
+        <span class="tag">Coming soon</span><br>
+        <a href="#" class="view-details">View details →</a>
+        <!-- Add full description, price, and sizes here once ready -->
+      </div>
+    </div>
+  </div>
+  <div class="note-box">
+    🐾 Every resin piece also supports our stray animal care initiative — feeding drives, vaccinations, and care for the wounded ones.
   </div>
 </section>
 
@@ -391,7 +467,7 @@
     <div class="step">
       <div class="num">02</div>
       <h3>Confirm your pick</h3>
-      <p>We'll confirm the product, price, and delivery details with you.</p>
+      <p>We'll confirm the product, customization, price, and delivery details with you.</p>
     </div>
     <div class="step">
       <div class="num">03</div>
@@ -413,20 +489,23 @@
 
   <details open>
     <summary>How long does delivery take?</summary>
-    <p>Once your order is confirmed, local Dubai delivery typically takes 2-4 days depending on stock availability.
-    We also provide express delivery in Dubai</p>
+    <p>Once your order is confirmed, local Dubai delivery typically takes 2-4 days depending on stock availability. We also provide express delivery in Dubai.</p>
   </details>
   <details>
-    <summary>Can I customize a notebook?</summary>
-    <p>Yes — message us with what you have in mind and we'll let you know what's possible for your batch.</p>
+    <summary>Can I customize a notebook or pen?</summary>
+    <p>Yes — message us on Instagram with your order details and we'll let you know what's possible for your batch and the artisan working on it.</p>
   </details>
   <details>
     <summary>Do you take bulk or corporate orders?</summary>
-    <p>Yes, reach out via WhatsApp with your quantity and timeline and we'll work out a plan.</p>
+    <p>Yes, reach out via WhatsApp with your quantity, customization requests if any, and timeline, and we'll work out a plan.</p>
   </details>
   <details>
     <summary>What payment methods do you accept?</summary>
-    <p>Details are shared once your order is confirmed — cash on delivery , Card Payments and bank transfer are both supported.</p>
+    <p>Details are shared once your order is confirmed — cash on delivery, card payments, and bank transfer are all supported.</p>
+  </details>
+  <details>
+    <summary>How does Vibusha support artisans and stray animals?</summary>
+    <p>A fixed portion of every stationery order goes directly back to the artisan who made it. Every resin order contributes to our stray animal care initiative — feeding, vaccination, and care for the wounded.</p>
   </details>
 </section>
 
@@ -440,7 +519,7 @@
       <a href="https://wa.me/971521539791">WhatsApp</a>
       <a href="mailto:amirullah.finance@gmail.com">Email</a>
     </div>
-    <p class="fine">Crafted with care in India · Delivered with love across the UAE</p>
+    <p class="fine">Made by artisans, carried with heart</p>
   </div>
 </footer>
 
