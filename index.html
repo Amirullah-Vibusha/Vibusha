@@ -186,6 +186,18 @@
     letter-spacing:0.02em;
   }
   .view-details:hover{ text-decoration:underline; }
+  .product-info details{ margin-top:6px; }
+  .product-info summary.view-details{ list-style:none; }
+  .product-info summary.view-details::-webkit-details-marker{ display:none; }
+  .product-info details[open] summary.view-details::after{ content:" ↑"; }
+  .product-info .expanded{
+    margin-top:10px;
+    font-size:13px;
+    color:var(--ink-soft);
+    border-top:1px dashed var(--line);
+    padding-top:10px;
+  }
+  .expanded .placeholder{ color:var(--sage); font-style:italic; }
   .mission-list{
     list-style:none;
     margin-top:18px;
@@ -351,9 +363,11 @@
       <div class="product-info">
         <h3>The Daily Journal</h3>
         <p>Hand-painted, hand-stitched, with pages blended from cotton, silk, and moss. Lined, unlined, dated, or free-flowing — your call.</p>
-        <span class="tag">Coming soon</span><br>
-        <a href="#" class="view-details">View details →</a>
-        <!-- Add full description, price, and customization options here once ready -->
+        <span class="tag">Coming soon</span>
+        <details>
+          <summary class="view-details">View details</summary>
+          <p class="expanded">Each cover is hand-painted by the artisan working on your order — no two are ever identical. Pages are smooth and ink-friendly, blended from cotton, silk, and moss so thoughts flow without smudging through to the next page. Choose lined, unlined, dated, or undated inside layouts. <span class="placeholder">[Add size, price, and lead time here]</span></p>
+        </details>
       </div>
     </div>
     <div class="product-card">
@@ -361,9 +375,11 @@
       <div class="product-info">
         <h3>The Everyday Handbook</h3>
         <p>For catching stray thoughts before they slip away — morning coffee ideas, midday eureka moments, your next big project.</p>
-        <span class="tag">Coming soon</span><br>
-        <a href="#" class="view-details">View details →</a>
-        <!-- Add full description, price, and customization options here once ready -->
+        <span class="tag">Coming soon</span>
+        <details>
+          <summary class="view-details">View details</summary>
+          <p class="expanded">Built to hold ideas as they come — from a small note to a full plan you didn't know you were building. Whether it's a cookbook, a project outline, or scattered thoughts you want to look back on, this handbook doesn't box you into a format. <span class="placeholder">[Add size, price, and lead time here]</span></p>
+        </details>
       </div>
     </div>
     <div class="product-card">
@@ -371,9 +387,11 @@
       <div class="product-info">
         <h3>The Bookmark</h3>
         <p>Handmade from wood, handmade paper, and resin — marking your place and your progress.</p>
-        <span class="tag">Coming soon</span><br>
-        <a href="#" class="view-details">View details →</a>
-        <!-- Add full description, price, and customization options here once ready -->
+        <span class="tag">Coming soon</span>
+        <details>
+          <summary class="view-details">View details</summary>
+          <p class="expanded">A small companion piece that pairs naturally with the journals and handbooks — made from a mix of wood, handmade paper, and resin, so no two look quite the same. <span class="placeholder">[Add size, price, and lead time here]</span></p>
+        </details>
       </div>
     </div>
     <div class="product-card">
@@ -381,9 +399,11 @@
       <div class="product-info">
         <h3>Wooden Pens & Pencils</h3>
         <p>Inscribed wooden pens made to order, paired with a complimentary pencil for the thoughts you're still shaping.</p>
-        <span class="tag">Coming soon</span><br>
-        <a href="#" class="view-details">View details →</a>
-        <!-- Add full description, price, and customization options here once ready -->
+        <span class="tag">Coming soon</span>
+        <details>
+          <summary class="view-details">View details</summary>
+          <p class="expanded">Each pen is made to order and can be inscribed to your liking. The pen is for the thoughts you're ready to commit to; the complimentary pencil that comes with it is for the ones you're still shaping, sketching, or erasing along the way. <span class="placeholder">[Add size, price, and lead time here]</span></p>
+        </details>
       </div>
     </div>
     <div class="product-card">
@@ -391,9 +411,11 @@
       <div class="product-info">
         <h3>Pen Stands & Carrying Cases</h3>
         <p>A home for your writing tools, as considered as the pens themselves.</p>
-        <span class="tag">Coming soon</span><br>
-        <a href="#" class="view-details">View details →</a>
-        <!-- Add full description, price, and customization options here once ready -->
+        <span class="tag">Coming soon</span>
+        <details>
+          <summary class="view-details">View details</summary>
+          <p class="expanded">Designed to hold and protect your pens and pencils, each stand and case is as unique to look at as it is functional to own. <span class="placeholder">[Add size, price, and lead time here]</span></p>
+        </details>
       </div>
     </div>
   </div>
@@ -412,9 +434,11 @@
       <div class="product-info">
         <h3>Trays</h3>
         <p>For everyday objects that deserve a proper place to land.</p>
-        <span class="tag">Coming soon</span><br>
-        <a href="#" class="view-details">View details →</a>
-        <!-- Add full description, price, and sizes here once ready -->
+        <span class="tag">Coming soon</span>
+        <details>
+          <summary class="view-details">View details</summary>
+          <p class="expanded">Hand-poured in small batches, each tray is cast to be functional first — a place for your keys, jewelry, or whatever needs a home — while carrying a color and pattern that's never quite repeated. <span class="placeholder">[Add size, price, and lead time here]</span></p>
+        </details>
       </div>
     </div>
     <div class="product-card">
@@ -422,9 +446,11 @@
       <div class="product-info">
         <h3>Coasters</h3>
         <p>Small enough for every mug, sturdy enough to last for years.</p>
-        <span class="tag">Coming soon</span><br>
-        <a href="#" class="view-details">View details →</a>
-        <!-- Add full description, price, and sizes here once ready -->
+        <span class="tag">Coming soon</span>
+        <details>
+          <summary class="view-details">View details</summary>
+          <p class="expanded">Cast in small sets, these coasters are built for daily use — heat-resistant enough for a warm cup and sturdy enough to hold up to years of use. <span class="placeholder">[Add set size, price, and lead time here]</span></p>
+        </details>
       </div>
     </div>
     <div class="product-card">
@@ -432,9 +458,11 @@
       <div class="product-info">
         <h3>Photo Frames</h3>
         <p>Preserve a moment exactly as you remember it.</p>
-        <span class="tag">Coming soon</span><br>
-        <a href="#" class="view-details">View details →</a>
-        <!-- Add full description, price, and sizes here once ready -->
+        <span class="tag">Coming soon</span>
+        <details>
+          <summary class="view-details">View details</summary>
+          <p class="expanded">A frame that holds more than a photo — we can also set in small keepsakes alongside your image, like a pressed flower or a fragment that means something to you, cast permanently into the resin. <span class="placeholder">[Add size, price, and lead time here]</span></p>
+        </details>
       </div>
     </div>
     <div class="product-card">
@@ -442,9 +470,11 @@
       <div class="product-info">
         <h3>Pen Stands</h3>
         <p>A companion to your pens, cast to last.</p>
-        <span class="tag">Coming soon</span><br>
-        <a href="#" class="view-details">View details →</a>
-        <!-- Add full description, price, and sizes here once ready -->
+        <span class="tag">Coming soon</span>
+        <details>
+          <summary class="view-details">View details</summary>
+          <p class="expanded">Cast to hold your pens upright and in view, each stand carries its own swirl of color — no two pours turn out exactly alike. <span class="placeholder">[Add size, price, and lead time here]</span></p>
+        </details>
       </div>
     </div>
   </div>
