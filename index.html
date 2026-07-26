@@ -198,6 +198,45 @@
     padding-top:10px;
   }
   .expanded .placeholder{ color:var(--sage); font-style:italic; }
+  .inventory-table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:12px;
+    font-size:12px;
+  }
+  .inventory-table th{
+    text-align:left;
+    padding:6px 8px;
+    background:var(--line);
+    color:var(--ink);
+    font-weight:600;
+    font-size:11px;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+  }
+  .inventory-table td{
+    padding:6px 8px;
+    border-bottom:1px solid var(--line);
+    color:var(--ink-soft);
+    vertical-align:top;
+  }
+  .inventory-table tr:last-child td{ border-bottom:none; }
+  .stock-badge{
+    display:inline-block;
+    background:#e8f4ea;
+    color:#2d6a35;
+    font-size:10px;
+    font-weight:600;
+    padding:2px 7px;
+    border-radius:10px;
+    letter-spacing:0.03em;
+  }
+  .price-placeholder{
+    color:var(--rust);
+    font-weight:600;
+    font-style:italic;
+    font-size:12px;
+  }
   .mission-list{
     list-style:none;
     margin-top:18px;
@@ -359,31 +398,57 @@
   <p class="eyebrow">Stationery</p>
   <h2>The lineup</h2>
   <div class="products-grid">
-    <!-- To add a photo: replace the swatch div below with <img src="yourfile.jpg" style="width:100%; height:150px; object-fit:cover;"> -->
+
+    <!-- To add a photo: replace the swatch div with <img src="yourfile.jpg" style="width:100%; height:150px; object-fit:cover;"> -->
+
     <div class="product-card">
       <div class="swatch s1">Photo coming soon</div>
       <div class="product-info">
         <h3>The Daily Journal</h3>
-        <p>Hand-painted, hand-stitched, with pages blended from cotton, silk, and moss. Lined, unlined, dated, or free-flowing — your call.</p>
+        <p>Hand-painted, hand-stitched pages blended from cotton, silk, and moss. Lined, unlined, dated, or free-flowing — your call.</p>
         <span class="tag">Coming soon</span>
         <details>
-          <summary class="view-details">View details</summary>
-          <p class="expanded">Each cover is hand-painted by the artisan working on your order — no two are ever identical. Pages are smooth and ink-friendly, blended from cotton, silk, and moss so thoughts flow without smudging through to the next page. Choose lined, unlined, dated, or undated inside layouts. <span class="placeholder">[Add size, price, and lead time here]</span></p>
+          <summary class="view-details">View details + stock</summary>
+          <div class="expanded">
+            <p>Each cover is hand-painted by the artisan on your order — no two identical. Pages are smooth and ink-friendly, blended from cotton, silk, and moss so thoughts flow without smudging to the next page.</p>
+            <p style="margin-top:8px;"><strong>Customization options:</strong> Lined / Unlined / Dotted · Dated / Undated · Cover color & motif · Name or inscription on cover</p>
+            <p style="margin-top:8px;"><strong>Materials:</strong> Cotton, silk & moss blend pages · Hand-painted tribal art cover · Hand-stitched binding</p>
+            <p style="margin-top:8px;"><strong>Lead time:</strong> 5–7 working days for custom orders</p>
+            <table class="inventory-table">
+              <tr><th>Variant</th><th>Stock</th><th>Price (AED)</th></tr>
+              <tr><td>A5 — Lined, Dated</td><td><span class="stock-badge">20 in stock</span></td><td><span class="price-placeholder">TBA</span></td></tr>
+              <tr><td>A5 — Unlined, Undated</td><td><span class="stock-badge">20 in stock</span></td><td><span class="price-placeholder">TBA</span></td></tr>
+              <tr><td>A4 — Lined, Dated</td><td><span class="stock-badge">20 in stock</span></td><td><span class="price-placeholder">TBA</span></td></tr>
+            </table>
+          </div>
         </details>
       </div>
     </div>
+
     <div class="product-card">
       <div class="swatch s2">Photo coming soon</div>
       <div class="product-info">
         <h3>The Everyday Handbook</h3>
-        <p>For catching stray thoughts before they slip away — morning coffee ideas, midday eureka moments, your next big project.</p>
+        <p>For catching thoughts before they slip away — morning coffee ideas, eureka moments, your next big project.</p>
         <span class="tag">Coming soon</span>
         <details>
-          <summary class="view-details">View details</summary>
-          <p class="expanded">Built to hold ideas as they come — from a small note to a full plan you didn't know you were building. Whether it's a cookbook, a project outline, or scattered thoughts you want to look back on, this handbook doesn't box you into a format. <span class="placeholder">[Add size, price, and lead time here]</span></p>
+          <summary class="view-details">View details + stock</summary>
+          <div class="expanded">
+            <p>Built to hold ideas as they come — from a small note to a full plan you didn't know you were building. Whether it's a cookbook draft, a project outline, or scattered thoughts, this handbook doesn't box you into a format.</p>
+            <p style="margin-top:8px;"><strong>Customization options:</strong> Cover motif · Plain / Sectioned pages · Pocket insert available</p>
+            <p style="margin-top:8px;"><strong>Materials:</strong> Handmade paper pages · Tribal art painted cover · Cloth spine binding</p>
+            <p style="margin-top:8px;"><strong>Lead time:</strong> 4–6 working days</p>
+            <table class="inventory-table">
+              <tr><th>Variant</th><th>Stock</th><th>Price (AED)</th></tr>
+              <tr><td>A6 — Plain pages</td><td><span class="stock-badge">20 in stock</span></td><td><span class="price-placeholder">TBA</span></td></tr>
+              <tr><td>A6 — Sectioned (daily/ideas)</td><td><span class="stock-badge">20 in stock</span></td><td><span class="price-placeholder">TBA</span></td></tr>
+              <tr><td>A5 — Plain pages</td><td><span class="stock-badge">20 in stock</span></td><td><span class="price-placeholder">TBA</span></td></tr>
+            </table>
+          </div>
         </details>
       </div>
     </div>
+
     <div class="product-card">
       <div class="swatch s3">Photo coming soon</div>
       <div class="product-info">
@@ -391,11 +456,23 @@
         <p>Handmade from wood, handmade paper, and resin — marking your place and your progress.</p>
         <span class="tag">Coming soon</span>
         <details>
-          <summary class="view-details">View details</summary>
-          <p class="expanded">A small companion piece that pairs naturally with the journals and handbooks — made from a mix of wood, handmade paper, and resin, so no two look quite the same. <span class="placeholder">[Add size, price, and lead time here]</span></p>
+          <summary class="view-details">View details + stock</summary>
+          <div class="expanded">
+            <p>A small companion piece that pairs naturally with the journals and handbooks. Made from a mix of wood, handmade paper, and resin — each one carries a different texture and finish, so no two look quite the same.</p>
+            <p style="margin-top:8px;"><strong>Customization options:</strong> Material preference (wood / resin / paper blend) · Motif or name engraving available</p>
+            <p style="margin-top:8px;"><strong>Materials:</strong> Wood · Handmade paper · Resin finish</p>
+            <p style="margin-top:8px;"><strong>Lead time:</strong> 3–5 working days</p>
+            <table class="inventory-table">
+              <tr><th>Variant</th><th>Stock</th><th>Price (AED)</th></tr>
+              <tr><td>Wood finish</td><td><span class="stock-badge">20 in stock</span></td><td><span class="price-placeholder">TBA</span></td></tr>
+              <tr><td>Resin finish</td><td><span class="stock-badge">20 in stock</span></td><td><span class="price-placeholder">TBA</span></td></tr>
+              <tr><td>Handmade paper</td><td><span class="stock-badge">20 in stock</span></td><td><span class="price-placeholder">TBA</span></td></tr>
+            </table>
+          </div>
         </details>
       </div>
     </div>
+
     <div class="product-card">
       <div class="swatch s4">Photo coming soon</div>
       <div class="product-info">
@@ -403,11 +480,23 @@
         <p>Inscribed wooden pens made to order, paired with a complimentary pencil for the thoughts you're still shaping.</p>
         <span class="tag">Coming soon</span>
         <details>
-          <summary class="view-details">View details</summary>
-          <p class="expanded">Each pen is made to order and can be inscribed to your liking. The pen is for the thoughts you're ready to commit to; the complimentary pencil that comes with it is for the ones you're still shaping, sketching, or erasing along the way. <span class="placeholder">[Add size, price, and lead time here]</span></p>
+          <summary class="view-details">View details + stock</summary>
+          <div class="expanded">
+            <p>Each pen is turned and inscribed to your liking — the pen for the thoughts you're ready to commit to, the complimentary pencil for the ones you're still shaping or erasing. A complete set for every kind of thought.</p>
+            <p style="margin-top:8px;"><strong>Customization options:</strong> Name or quote inscription · Wood type preference · Ink colour</p>
+            <p style="margin-top:8px;"><strong>Materials:</strong> Handcrafted wood body · Smooth-flow ink refill · Matching pencil included</p>
+            <p style="margin-top:8px;"><strong>Lead time:</strong> 5–7 working days for inscribed orders</p>
+            <table class="inventory-table">
+              <tr><th>Variant</th><th>Stock</th><th>Price (AED)</th></tr>
+              <tr><td>Pen only</td><td><span class="stock-badge">20 in stock</span></td><td><span class="price-placeholder">TBA</span></td></tr>
+              <tr><td>Pen + Pencil set</td><td><span class="stock-badge">20 in stock</span></td><td><span class="price-placeholder">TBA</span></td></tr>
+              <tr><td>Inscribed Pen + Pencil set</td><td><span class="stock-badge">20 in stock</span></td><td><span class="price-placeholder">TBA</span></td></tr>
+            </table>
+          </div>
         </details>
       </div>
     </div>
+
     <div class="product-card">
       <div class="swatch s5">Photo coming soon</div>
       <div class="product-info">
@@ -415,11 +504,23 @@
         <p>A home for your writing tools, as considered as the pens themselves.</p>
         <span class="tag">Coming soon</span>
         <details>
-          <summary class="view-details">View details</summary>
-          <p class="expanded">Designed to hold and protect your pens and pencils, each stand and case is as unique to look at as it is functional to own. <span class="placeholder">[Add size, price, and lead time here]</span></p>
+          <summary class="view-details">View details + stock</summary>
+          <div class="expanded">
+            <p>Designed to hold and protect your pens and pencils — each stand and case is as unique to look at as it is functional to own. Pairs directly with our wooden pen sets for a complete desk setup.</p>
+            <p style="margin-top:8px;"><strong>Customization options:</strong> Stand colour / motif · Case lining colour</p>
+            <p style="margin-top:8px;"><strong>Materials:</strong> Resin cast stand · Handmade fabric/leather carrying case</p>
+            <p style="margin-top:8px;"><strong>Lead time:</strong> 4–6 working days</p>
+            <table class="inventory-table">
+              <tr><th>Variant</th><th>Stock</th><th>Price (AED)</th></tr>
+              <tr><td>Pen stand (resin)</td><td><span class="stock-badge">20 in stock</span></td><td><span class="price-placeholder">TBA</span></td></tr>
+              <tr><td>Carrying case</td><td><span class="stock-badge">20 in stock</span></td><td><span class="price-placeholder">TBA</span></td></tr>
+              <tr><td>Stand + Case bundle</td><td><span class="stock-badge">20 in stock</span></td><td><span class="price-placeholder">TBA</span></td></tr>
+            </table>
+          </div>
         </details>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -430,7 +531,9 @@
   <h2>Built to preserve, made to last</h2>
   <p style="color:var(--ink-soft); max-width:600px; margin-bottom:24px; font-size:15px;">Preserving isn't just about the object — it's what brings families and feelings closer, turning a keepsake into something passed down.</p>
   <div class="products-grid">
-    <!-- To add a photo: replace the swatch div below with <img src="yourfile.jpg" style="width:100%; height:150px; object-fit:cover;"> -->
+
+    <!-- To add a photo: replace the swatch div with <img src="yourfile.jpg" style="width:100%; height:150px; object-fit:cover;"> -->
+
     <div class="product-card">
       <div class="swatch s3">Photo coming soon</div>
       <div class="product-info">
@@ -438,11 +541,23 @@
         <p>For everyday objects that deserve a proper place to land.</p>
         <span class="tag">Coming soon</span>
         <details>
-          <summary class="view-details">View details</summary>
-          <p class="expanded">Hand-poured in small batches, each tray is cast to be functional first — a place for your keys, jewelry, or whatever needs a home — while carrying a color and pattern that's never quite repeated. <span class="placeholder">[Add size, price, and lead time here]</span></p>
+          <summary class="view-details">View details + stock</summary>
+          <div class="expanded">
+            <p>Hand-poured in small batches, each tray is cast to be functional first — a place for your keys, jewelry, or whatever needs a home — while carrying a colour and pattern that's never quite repeated.</p>
+            <p style="margin-top:8px;"><strong>Customization options:</strong> Colour palette · Embedded elements (flowers, glitter, fabric) · Size</p>
+            <p style="margin-top:8px;"><strong>Materials:</strong> High-grade resin · Non-slip base · UV-resistant finish</p>
+            <p style="margin-top:8px;"><strong>Lead time:</strong> 5–8 working days</p>
+            <table class="inventory-table">
+              <tr><th>Variant</th><th>Stock</th><th>Price (AED)</th></tr>
+              <tr><td>Small tray</td><td><span class="stock-badge">20 in stock</span></td><td><span class="price-placeholder">TBA</span></td></tr>
+              <tr><td>Medium tray</td><td><span class="stock-badge">20 in stock</span></td><td><span class="price-placeholder">TBA</span></td></tr>
+              <tr><td>Large tray</td><td><span class="stock-badge">20 in stock</span></td><td><span class="price-placeholder">TBA</span></td></tr>
+            </table>
+          </div>
         </details>
       </div>
     </div>
+
     <div class="product-card">
       <div class="swatch s2">Photo coming soon</div>
       <div class="product-info">
@@ -450,11 +565,23 @@
         <p>Small enough for every mug, sturdy enough to last for years.</p>
         <span class="tag">Coming soon</span>
         <details>
-          <summary class="view-details">View details</summary>
-          <p class="expanded">Cast in small sets, these coasters are built for daily use — heat-resistant enough for a warm cup and sturdy enough to hold up to years of use. <span class="placeholder">[Add set size, price, and lead time here]</span></p>
+          <summary class="view-details">View details + stock</summary>
+          <div class="expanded">
+            <p>Cast in small sets, these coasters are built for daily use — heat-resistant enough for a warm cup and sturdy enough to hold up for years. Each set carries its own colour story that won't be repeated.</p>
+            <p style="margin-top:8px;"><strong>Customization options:</strong> Colour palette · Embedded elements · Round / Square shape</p>
+            <p style="margin-top:8px;"><strong>Materials:</strong> High-grade heat-resistant resin · Cork base</p>
+            <p style="margin-top:8px;"><strong>Lead time:</strong> 4–6 working days</p>
+            <table class="inventory-table">
+              <tr><th>Variant</th><th>Stock</th><th>Price (AED)</th></tr>
+              <tr><td>Set of 2 — Round</td><td><span class="stock-badge">20 in stock</span></td><td><span class="price-placeholder">TBA</span></td></tr>
+              <tr><td>Set of 4 — Round</td><td><span class="stock-badge">20 in stock</span></td><td><span class="price-placeholder">TBA</span></td></tr>
+              <tr><td>Set of 4 — Square</td><td><span class="stock-badge">20 in stock</span></td><td><span class="price-placeholder">TBA</span></td></tr>
+            </table>
+          </div>
         </details>
       </div>
     </div>
+
     <div class="product-card">
       <div class="swatch s1">Photo coming soon</div>
       <div class="product-info">
@@ -462,11 +589,23 @@
         <p>Preserve a moment exactly as you remember it.</p>
         <span class="tag">Coming soon</span>
         <details>
-          <summary class="view-details">View details</summary>
-          <p class="expanded">A frame that holds more than a photo — we can also set in small keepsakes alongside your image, like a pressed flower or a fragment that means something to you, cast permanently into the resin. <span class="placeholder">[Add size, price, and lead time here]</span></p>
+          <summary class="view-details">View details + stock</summary>
+          <div class="expanded">
+            <p>A frame that holds more than a photo — we can set in small keepsakes alongside your image, like a pressed flower or a meaningful fragment, cast permanently into the resin so it never fades.</p>
+            <p style="margin-top:8px;"><strong>Customization options:</strong> Colour palette · Embedded keepsakes (flowers, fabric, text) · Portrait / Landscape orientation</p>
+            <p style="margin-top:8px;"><strong>Materials:</strong> High-grade resin cast · Glass front · Velvet backing</p>
+            <p style="margin-top:8px;"><strong>Lead time:</strong> 6–9 working days</p>
+            <table class="inventory-table">
+              <tr><th>Variant</th><th>Stock</th><th>Price (AED)</th></tr>
+              <tr><td>4x6 inch frame</td><td><span class="stock-badge">20 in stock</span></td><td><span class="price-placeholder">TBA</span></td></tr>
+              <tr><td>5x7 inch frame</td><td><span class="stock-badge">20 in stock</span></td><td><span class="price-placeholder">TBA</span></td></tr>
+              <tr><td>5x7 with keepsake embed</td><td><span class="stock-badge">20 in stock</span></td><td><span class="price-placeholder">TBA</span></td></tr>
+            </table>
+          </div>
         </details>
       </div>
     </div>
+
     <div class="product-card">
       <div class="swatch s4">Photo coming soon</div>
       <div class="product-info">
@@ -474,11 +613,23 @@
         <p>A companion to your pens, cast to last.</p>
         <span class="tag">Coming soon</span>
         <details>
-          <summary class="view-details">View details</summary>
-          <p class="expanded">Cast to hold your pens upright and in view, each stand carries its own swirl of color — no two pours turn out exactly alike. <span class="placeholder">[Add size, price, and lead time here]</span></p>
+          <summary class="view-details">View details + stock</summary>
+          <div class="expanded">
+            <p>Cast to hold your pens upright and in view, each stand carries its own swirl of colour — no two pours turn out exactly alike. Works as a standalone desk piece even when your pens are in use.</p>
+            <p style="margin-top:8px;"><strong>Customization options:</strong> Colour palette · Single / Multi-pen capacity · Embedded elements</p>
+            <p style="margin-top:8px;"><strong>Materials:</strong> High-grade resin · Non-slip weighted base</p>
+            <p style="margin-top:8px;"><strong>Lead time:</strong> 4–6 working days</p>
+            <table class="inventory-table">
+              <tr><th>Variant</th><th>Stock</th><th>Price (AED)</th></tr>
+              <tr><td>Single pen stand</td><td><span class="stock-badge">20 in stock</span></td><td><span class="price-placeholder">TBA</span></td></tr>
+              <tr><td>Multi-pen stand (up to 4)</td><td><span class="stock-badge">20 in stock</span></td><td><span class="price-placeholder">TBA</span></td></tr>
+              <tr><td>Desk set (stand + tray)</td><td><span class="stock-badge">20 in stock</span></td><td><span class="price-placeholder">TBA</span></td></tr>
+            </table>
+          </div>
         </details>
       </div>
     </div>
+
   </div>
   <div class="note-box">
     🐾 Every resin piece also supports our stray animal care initiative — feeding drives, vaccinations, and care for the wounded ones.
