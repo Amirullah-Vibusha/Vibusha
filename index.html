@@ -4,6 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vibusha — Handmade by Artisans</title>
+<meta name="description" content="Vibusha: handmade stationery and resin keepsakes by tribal artists across India. Hand-painted journals, bookmarks, pens, coasters and photo frames, made to order in Dubai.">
+<meta name="author" content="Vibusha">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://amirullah-vibusha.github.io/Vibusha/">
+
+<!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Vibusha">
+<meta property="og:title" content="Vibusha — Handmade by Artisans">
+<meta property="og:description" content="Artisan stationery and resin keepsakes, handcrafted by tribal artists across India. One of a kind, never mass-produced.">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://amirullah-vibusha.github.io/Vibusha/">
+<meta property="og:image" content="https://amirullah-vibusha.github.io/Vibusha/vibusha-logo.png">
+<meta property="og:image:alt" content="Vibusha logo">
+
+<!-- Twitter / X card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Vibusha — Handmade by Artisans">
+<meta name="twitter:description" content="Artisan stationery and resin keepsakes, handcrafted by tribal artists across India. One of a kind, never mass-produced.">
+<meta name="twitter:image" content="https://amirullah-vibusha.github.io/Vibusha/vibusha-logo.png">
 <link rel="icon" type="image/png" href="vibusha-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Caveat:wght@600;700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -109,6 +129,29 @@ nav a:hover { color: var(--red); }
   font-weight: 600;
 }
 .nav-cta:hover { background: #8f2025 !important; color: #fff !important; }
+
+/* hamburger toggle (hidden on desktop) */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 40px; height: 40px;
+  padding: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.menu-toggle span {
+  display: block;
+  width: 22px; height: 1.5px;
+  background: var(--ink-mid);
+  transition: transform 0.25s, opacity 0.2s;
+}
+header.menu-open .menu-toggle span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+header.menu-open .menu-toggle span:nth-child(2) { opacity: 0; }
+header.menu-open .menu-toggle span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
 /* ── HERO ─────────────────────────────────────────────── */
 .hero {
@@ -246,7 +289,11 @@ nav a:hover { color: var(--red); }
   border-right: 1px solid var(--line);
 }
 .product-row.reverse .product-img { border-right: none; border-left: 1px solid var(--line); }
-.product-img img { width: 100%; height: 100%; object-fit: cover; }
+.product-img img {
+  width: 100%; height: 100%;
+  object-fit: contain;
+  padding: 32px;
+}
 .img-placeholder {
   text-align: center;
   padding: 40px;
@@ -459,7 +506,35 @@ footer {
   .product-img { min-height: 260px; border-right: none !important; border-left: none !important; border-bottom: 1px solid var(--line); }
   .product-detail { padding: 32px 24px; }
   .steps { grid-template-columns: 1fr; }
-  nav { display: none; }
+  header { padding: 0 20px; }
+  .menu-toggle { display: flex; }
+  nav {
+    display: none;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: var(--cream);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 12px 24px rgba(28, 15, 10, 0.08);
+    padding: 8px 20px 20px;
+  }
+  header.menu-open nav { display: flex; }
+  nav a {
+    font-size: 15px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  nav a:last-child { border-bottom: none; }
+  .nav-cta {
+    margin-top: 16px;
+    text-align: center;
+    padding: 12px 16px;
+    font-size: 14px;
+    border-bottom: none;
+  }
+  .hero { padding: 80px 20px 72px; }
+  .wrap, .wrap-sm { padding: 0 20px; }
 }
 </style>
 </head>
@@ -469,7 +544,10 @@ footer {
 <header>
   <div class="inner">
     <div class="logo">Vibusha</div>
-    <nav>
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="site-nav">
       <a href="#mission">Our Story</a>
       <a href="#stationery">Stationery</a>
       <a href="#resin">Resin</a>
@@ -943,6 +1021,31 @@ footer {
 </footer>
 
 <script>
+(function () {
+  var header = document.querySelector('header');
+  var toggle = header.querySelector('.menu-toggle');
+  var nav = document.getElementById('site-nav');
+
+  function setMenu(open) {
+    header.classList.toggle('menu-open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+
+  toggle.addEventListener('click', function () {
+    setMenu(!header.classList.contains('menu-open'));
+  });
+  nav.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { setMenu(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') setMenu(false);
+  });
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 768) setMenu(false);
+  });
+})();
+
 function toggleAccordion(btn) {
   btn.classList.toggle('open');
   const accordion = btn.nextElementSibling;
